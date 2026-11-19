@@ -1,0 +1,152 @@
+{
+  "source_project": "isac_sim2real_agent",
+  "source_root_relative": "mosaic_platform_v101/CARLA_sensor_storage",
+  "method": "Selective plain-Python function extraction and deterministic official-CARLA runtime refactoring. The retained source files and generated adapters are listed below.",
+  "files": [
+    {
+      "source": "frame_sync.py",
+      "source_sha256": "a81f8aeaa84e1f15ca44b36a5a6614b9a1ba0537d8de8c4fec13d040de810fb5",
+      "targets": [
+        "sigma/sensing/frame_sync.py"
+      ],
+      "mode": "extracted functions",
+      "target_sha256": {
+        "sigma/sensing/frame_sync.py": "b3d9b9961bc21bdb4ddc8012d78d69b55e7a4921360b31ddcf2e986d1fcdabe2"
+      }
+    },
+    {
+      "source": "data_utils/geo_utils.py",
+      "source_sha256": "dd61ce6933db83484f86598ebfa70701672be20f937fd701ef414cd54ccf0980",
+      "targets": [
+        "sigma/sensing/geo.py"
+      ],
+      "mode": "extracted functions",
+      "target_sha256": {
+        "sigma/sensing/geo.py": "b2be6a9f63f8d18b856defb381f3b93c99006e699045d9c95500fa04a824160e"
+      }
+    },
+    {
+      "source": "data_utils/multimodal_schema.py",
+      "source_sha256": "33c6176b241a69528346fdb9927cab40a31f49b09194094a71498241daa3f328",
+      "targets": [
+        "sigma/sensing/schema.py"
+      ],
+      "mode": "extracted functions",
+      "target_sha256": {
+        "sigma/sensing/schema.py": "7febe299f7728f32a90be82e39fe5ff0fa194856520221302a24160970302376"
+      }
+    },
+    {
+      "source": "data_utils/stage1_writer.py",
+      "source_sha256": "bd535f5e3a7afe6e66b398a90e159a5155f9a9ad95acc4c47684369b61aac630",
+      "targets": [
+        "sigma/sensing/writer.py"
+      ],
+      "mode": "extracted functions",
+      "target_sha256": {
+        "sigma/sensing/writer.py": "d4240fa8153be71d9ec7dd827d341b93a809095fc658e2f6962e4709b8ba8cb1"
+      }
+    },
+    {
+      "source": "scenario_geometry.py",
+      "source_sha256": "dfc806c99c92ccafc89da863e35354f32f4fc968062ec1db6e3c01f967336467",
+      "targets": [
+        "sigma/sensing/routes.py"
+      ],
+      "mode": "extracted functions",
+      "target_sha256": {
+        "sigma/sensing/routes.py": "5d33ce8fa7b0a1e7adda20832b59a929018facd3f7becf12bc22d79c8f299c48"
+      }
+    },
+    {
+      "source": "annotation_manager.py",
+      "source_sha256": "b98d608e02640099bb333dff7c0761f6ad0bea46ab46ffb992c015606c53da1a",
+      "targets": [
+        "sigma/sensing/fov.py"
+      ],
+      "mode": "extracted functions",
+      "target_sha256": {
+        "sigma/sensing/fov.py": "e2c70c3108d1f7256935292c9d363513942ecc778669731fbcbe9b0e184f918b"
+      }
+    },
+    {
+      "source": "sensor_manager.py",
+      "source_sha256": "86867c0501314466dc815734feb926b1f8e66a783b61e0e9763b9c34b5bdbf2f",
+      "targets": [
+        "sigma/sensing/sensors.py"
+      ],
+      "mode": "audited/refactored behavior",
+      "target_sha256": {
+        "sigma/sensing/sensors.py": "d87d0f81cc5a43e2fe10c59e63b83725dd50daeb4c837532197152330255d2a9"
+      }
+    },
+    {
+      "source": "carla_session.py",
+      "source_sha256": "42c28d960f0b86b0aba3420a0a9541940d2c33f9e01ecba4802bf1cf38d381ba",
+      "targets": [
+        "sigma/sensing/runtime.py"
+      ],
+      "mode": "audited/refactored behavior",
+      "target_sha256": {
+        "sigma/sensing/runtime.py": "0422b0308eb9f2f20a0e2a9e374cbf2064ade52f4d2874ab8c49174444fdbb0c"
+      }
+    },
+    {
+      "source": "trajectory_generator.py",
+      "source_sha256": "0247e27184f84916f016291752561cbb040e3bf452c85189844fe8e4efc7409f",
+      "targets": [
+        "sigma/sensing/runner.py"
+      ],
+      "mode": "audited/refactored behavior",
+      "target_sha256": {
+        "sigma/sensing/runner.py": "8e3d1538158a1b5db842d263db6fa36255e4729eefa077a570df81115c4ee55e"
+      }
+    },
+    {
+      "source": "config_schema.py",
+      "source_sha256": "3d060617169e4092604b31e3191871561d1c0a85e6afeac22208d37fa025b14a",
+      "targets": [
+        "sigma/sensing/config.py"
+      ],
+      "mode": "audited/refactored behavior",
+      "target_sha256": {
+        "sigma/sensing/config.py": "7e79d506cc7b956c89ca7829d72bd20c640f7b3714b0b3118aa66e3dbc0ed5f8"
+      }
+    },
+    {
+      "source": "collection_callbacks.py",
+      "source_sha256": "172d70a7d16057bba4725d60b42e97603a78addb00db1b76154d9b1ea8169882",
+      "targets": [
+        "sigma/sensing/runner.py"
+      ],
+      "mode": "audited/refactored behavior",
+      "target_sha256": {
+        "sigma/sensing/runner.py": "8e3d1538158a1b5db842d263db6fa36255e4729eefa077a570df81115c4ee55e"
+      }
+    },
+    {
+      "source": "collection_manager.py",
+      "source_sha256": "0e61f67ecd2c80bda30c155aff2e897f5fc12fce43c29a9123aaf5f8d60faa03",
+      "targets": [
+        "sigma/sensing/runner.py"
+      ],
+      "mode": "audited/refactored behavior",
+      "target_sha256": {
+        "sigma/sensing/runner.py": "8e3d1538158a1b5db842d263db6fa36255e4729eefa077a570df81115c4ee55e"
+      }
+    },
+    {
+      "source": "traffic_actor_manager.py",
+      "source_sha256": "4416ef6fc386ade9a51ff0007fc492a36a4546c0f12171a8d6f773fec6c9e96f",
+      "targets": [
+        "sigma/sensing/runner.py",
+        "sigma/sensing/routes.py"
+      ],
+      "mode": "audited/refactored behavior",
+      "target_sha256": {
+        "sigma/sensing/runner.py": "8e3d1538158a1b5db842d263db6fa36255e4729eefa077a570df81115c4ee55e",
+        "sigma/sensing/routes.py": "5d33ce8fa7b0a1e7adda20832b59a929018facd3f7becf12bc22d79c8f299c48"
+      }
+    }
+  ]
+}

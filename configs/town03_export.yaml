@@ -1,0 +1,15 @@
+# python -m sigma.map_export.cli -c configs/town03_export.yaml -o assets/local/town03
+site_id: town03
+map_export:
+  enabled: true
+  map_name: Town03
+  map_source: official
+  carla_root: ../assets/local/CARLA_0.9.16_source
+  unreal_editor_cmd: ../assets/local/UnrealEngine_4.26/Engine/Binaries/Linux/UE4Editor-Cmd
+  blender_bin: blender
+  format: fbx
+  selection_mode: geometry
+  rhi: vulkan
+  timeout_seconds: 21600
+  minimum_output_size_bytes: 1048576
+  meshify_curves: true

@@ -1,0 +1,24 @@
+{
+  "sionna_rt_version": "2.2.0",
+  "num_paths": 10,
+  "target_indices": [
+    0,
+    1
+  ],
+  "min_range_m": 17.749998092651367,
+  "doppler_hz_min": 139.11508178710938,
+  "doppler_hz_max": 2568.443603515625,
+  "iq_shape": [
+    4,
+    256,
+    128
+  ],
+  "iq_dtype": "complex64",
+  "mesh_loaded": true,
+  "multi_vehicle_targets": 2,
+  "official_paths_concat": true,
+  "background_path_count_in_empty_scene": 0,
+  "device": "CPU",
+  "variant": "llvm_ad_mono_polarized",
+  "scope": "Constructed two-vehicle RCS backend fixture"
+}

@@ -1,0 +1,52 @@
+# SiGMA generation and optional label-export parameter record.
+schema_version: 1
+kind: paper_experiment_protocol
+use_case_i:
+  dataset: DeepSense 6G Scenario 3
+  beam_codebook_sizes:
+  - 32
+  - 64
+  subset_32_original_indices_zero_based:
+    start: 0
+    step: 2
+    stop_exclusive: 64
+  recompute_labels_after_subset: true
+  construction:
+    sigma:
+      roads: OSM
+      buildings: OSM priority with conflict-screened Overture additions
+      geometry: automated procedural 3D reconstruction with facades
+      textures: rendered
+use_case_ii:
+  synthetic_data:
+    frames: 2616
+    trajectories: 50
+  ris:
+    rows: 32
+    cols: 32
+    elements: 1024
+  phase_codebooks:
+  - candidates: 256
+    angular_grid:
+    - 16
+    - 16
+  - candidates: 1024
+    angular_grid:
+    - 32
+    - 32
+  fixed_incident_wave_compensation: true
+  rsu:
+    antenna_count: 16
+    beam: fixed_unit_norm_toward_RIS
+  vehicle:
+    receive_antennas: 1
+  label_channel: RIS-only cascaded
+  label_index_base: 0
+  grouped_export:
+    folds: 3
+    grouping: geometrically_similar_trajectories
+metrics:
+  candidate_powers: linear
+  normalized_gain: best_top_k_power_divided_by_full_codebook_maximum
+  detection_association_prediction_failure_contribution: 0
+  top_k_accuracy: full_codebook_optimal_candidate_in_top_k

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "id": "new-building", "geometry": {"type": "Polygon", "coordinates": [[[-111.9996, 33.0005], [-111.9994, 33.0005], [-111.9994, 33.0007], [-111.9996, 33.0007], [-111.9996, 33.0005]]]}, "properties": {"height": 11, "sources": [{"dataset": "test fixture", "record_id": "fixture-1"}]}}]}

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sigma-isac"
+version = "0.1.0"
+description = "Site-grounded multi-modal ISAC data generation"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+dependencies = ["numpy>=1.26,<3", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+map = ["shapely>=2,<3", "pyproj>=3.6,<4", "matplotlib>=3.7,<4", "Pillow>=10"]
+sensing = ["carla==0.9.16", "Pillow>=10", "pyproj>=3.6,<4"]
+communication = ["numpy<2", "sionna-rt==2.0.1", "mitsuba==3.8.0", "drjit==1.3.1", "matplotlib>=3.7,<4"]
+radar = ["sionna-rt==2.2.0", "trimesh>=4,<5"]
+test = ["pytest>=8,<10", "shapely>=2,<3", "pyproj>=3.6,<4", "matplotlib>=3.7,<4", "Pillow>=10"]
+
+[project.scripts]
+sigma = "sigma.cli:main"
+
+[tool.setuptools]
+license-files = ["LICENSES/platform-MIT.txt", "THIRD_PARTY_NOTICES.md"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sigma*", "mosaic_core*", "Blender_xml_storage*", "Sionna_channel_storage*", "Radar_channel_storage*", "CARLA_sensor_storage*", "CSV_data_export*", "experiments*"]
+
+[tool.setuptools.package-data]
+mosaic_core = ["rf_materials.yaml"]
+"sigma.map_construction" = ["resources.json", "bridge/Public/*.h", "bridge/Private/*.cpp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "Sionna_channel_storage", "Radar_channel_storage", "Blender_xml_storage"]
+markers = ["integration: executes installed simulation backends or external services"]

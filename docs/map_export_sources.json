@@ -1,0 +1,40 @@
+{
+  "source_policy": "Source project audit with provenance paths and file checksums.",
+  "files": [
+    {
+      "source": "mosaic_ue_map_exporter_v1/tools/blender_meshify_export.py",
+      "source_sha256": "7c51795d0de0a41d8415011a4fe222357f740ae6987d50364c91487993167326",
+      "target": "sigma/map_export/tools/blender_meshify_export.py",
+      "target_sha256": "bc5a868d2b717b135fad2ab6574a4276ad33529360e79bed13ea679aa6b62ddc",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_ue_map_exporter_v1/tools/resolve_map_asset.py",
+      "source_sha256": "f9f175124cb1fb8dbb34fc31a960c3ae54681cddec98642701475f0e2e576e4d",
+      "target": "sigma/map_export/tools/resolve_map_asset.py",
+      "target_sha256": "f9f175124cb1fb8dbb34fc31a960c3ae54681cddec98642701475f0e2e576e4d",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_ue_map_exporter_v1/tools/supervise_ue_export.py",
+      "source_sha256": "26abeb30ba898b514b834ffe49d04af76a2853134be1a984bbdb8221e0dda8db",
+      "target": "sigma/map_export/tools/supervise_ue_export.py",
+      "target_sha256": "b50b4b509fcb27b23fcf4585c7298e25e4206963d3caf887888e505a2b321086",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_ue_map_exporter_v1/tools/validate_export.py",
+      "source_sha256": "b213c7ab9838969125e42961be9600d99c91b790e6db5ce9e281ffeecf5afbf2",
+      "target": "sigma/map_export/tools/validate_export.py",
+      "target_sha256": "b213c7ab9838969125e42961be9600d99c91b790e6db5ce9e281ffeecf5afbf2",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_ue_map_exporter_v1/ue/export_complete_map.py",
+      "source_sha256": "541b749747990d2b1d20681c292ad9832482a4e5af2d9560ffca797dc7791228",
+      "target": "sigma/map_export/ue/export_complete_map.py",
+      "target_sha256": "d3e3f2ab8d3ab99ba74a416004c392b14758d95667f28a1c997a0c66106787e8",
+      "status": "adapted"
+    }
+  ]
+}

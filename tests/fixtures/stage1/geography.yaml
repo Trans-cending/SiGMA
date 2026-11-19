@@ -1,0 +1,11 @@
+# Constructed geographic input for local Stage I integration checks.
+output_dir: ../../../outputs/geography-smoke
+schema_version: 1
+seed: 17
+site_id: constructed_geography_fixture
+stage1:
+  height_mode: overture
+  map_name: SigmaFixture
+  mode: prepare
+  osm_file: site.osm
+  overture_geojson: overture.geojson

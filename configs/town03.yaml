@@ -1,0 +1,582 @@
+# Town03 deployment from the source sensor configuration and canonical radio defaults.
+# Paths resolve relative to this YAML. Provenance: docs/configuration.md.
+schema_version: 1
+site_id: town03
+output_dir: ../outputs/town03
+seed: 42
+stage2:
+  host: 127.0.0.1
+  port: 2000
+  timeout: 20
+  traffic_manager_port: 8100
+  map:
+    name: Town03
+  fixed_delta_seconds: 0.1
+  max_frames: 40
+  sample_every_n_frames: 1
+  world_state_every_n_frames: 1
+  trajectory_id: 1
+  georeference_y_south: false
+  route:
+    selection: seeded_spawn_points
+    max_route_candidates: 64
+    speed_kmh: 40
+    step_m: 2
+  vehicles:
+    blueprint: vehicle.tesla.model3
+    background_count: 29
+  rsus:
+  - location:
+    - 0
+    - 0
+    - 15
+    rotation:
+      pitch: 0
+      yaw: 180
+      roll: 0
+    z_mode: absolute
+  sensors:
+    cav:
+      enabled: true
+      items:
+      - name: rgb_front
+        file_prefix: rgb_front
+        enabled: true
+        type: rgb
+        blueprint: sensor.camera.rgb
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 1.5
+          - 0.0
+          - 1.7
+          rotation:
+            pitch: 0
+            yaw: 0
+            roll: 0
+        every_n_samples: 1
+      - name: depth_front
+        file_prefix: depth_front
+        enabled: true
+        type: depth
+        blueprint: sensor.camera.depth
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 1.5
+          - 0.0
+          - 1.7
+          rotation:
+            pitch: 0
+            yaw: 0
+            roll: 0
+        depth_max_m: 200.0
+        every_n_samples: 1
+      - name: semantic_front
+        file_prefix: semantic_front
+        enabled: true
+        type: semantic
+        blueprint: sensor.camera.semantic_segmentation
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 1.5
+          - 0.0
+          - 1.7
+          rotation:
+            pitch: 0
+            yaw: 0
+            roll: 0
+        every_n_samples: 1
+      - name: cav_lidar_2d_top
+        file_prefix: lidar_2d_top
+        type: lidar_2d
+        modality: lidar_2d
+        direction: top
+        blueprint: sensor.lidar.ray_cast
+        channels: 1
+        range: 120.0
+        points_per_second: 60000
+        upper_fov: 0
+        lower_fov: 0
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 2.2
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        every_n_samples: 1
+        sync_rotation_frequency_to_sensor_tick: true
+      - name: cav_lidar_3d_top
+        file_prefix: lidar_3d_top
+        type: lidar_3d
+        modality: lidar_3d
+        direction: top
+        blueprint: sensor.lidar.ray_cast
+        channels: 32
+        range: 120.0
+        points_per_second: 120000
+        upper_fov: 10
+        lower_fov: -25
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 2.2
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        every_n_samples: 1
+        sync_rotation_frequency_to_sensor_tick: true
+      - name: cav_radar
+        type: radar
+        radar_backend: sionna_rcs
+        radar_profile: deepsense_s9
+        blueprint: sensor.other.radar
+        horizontal_fov: 120.0
+        vertical_fov: 10.0
+        range: 100.0
+        transform:
+          location:
+          - 2.0
+          - 0.0
+          - 1.0
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        start_frequency_hz: 77000000000.0
+        num_adc_samples: 256
+        num_chirps: 128
+        num_rx: 4
+        rx_spacing_wavelength: 0.5
+        sionna_rcs:
+          deterministic: true
+          seed: 0
+          max_depth: 2
+          buffer_size_per_sp: 100000
+          samples_per_sp: 100000
+          synthetic_array: true
+          los: true
+          specular_reflection: true
+          refraction: false
+          include_background_paths: false
+          background_max_depth: 2
+          background_samples_per_src: 100000
+          object_type: vehicle-multi-sp
+          model_type: 2
+          random_sigma_s: false
+          random_phases: false
+          random_xpr: false
+          target_margin_m: 2.0
+        every_n_samples: 1
+      - name: cav_gps
+        type: gps
+        blueprint: sensor.other.gnss
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.8
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        every_n_samples: 1
+      - name: cav_imu
+        type: imu
+        blueprint: sensor.other.imu
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.6
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        every_n_samples: 1
+    rsu:
+      enabled: true
+      items:
+      - name: rgb_front
+        file_prefix: rgb_front
+        enabled: true
+        type: rgb
+        blueprint: sensor.camera.rgb
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 0
+            roll: 0
+        every_n_samples: 1
+      - name: rgb_left
+        file_prefix: rgb_left
+        enabled: true
+        type: rgb
+        blueprint: sensor.camera.rgb
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: -90
+            roll: 0
+        every_n_samples: 1
+      - name: rgb_back
+        file_prefix: rgb_back
+        enabled: true
+        type: rgb
+        blueprint: sensor.camera.rgb
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 180
+            roll: 0
+        every_n_samples: 1
+      - name: rgb_right
+        file_prefix: rgb_right
+        enabled: true
+        type: rgb
+        blueprint: sensor.camera.rgb
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 90
+            roll: 0
+        every_n_samples: 1
+      - name: depth_front
+        file_prefix: depth_front
+        enabled: true
+        type: depth
+        blueprint: sensor.camera.depth
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 0
+            roll: 0
+        depth_max_m: 200.0
+        every_n_samples: 1
+      - name: depth_left
+        file_prefix: depth_left
+        enabled: true
+        type: depth
+        blueprint: sensor.camera.depth
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: -90
+            roll: 0
+        depth_max_m: 200.0
+        every_n_samples: 1
+      - name: depth_back
+        file_prefix: depth_back
+        enabled: true
+        type: depth
+        blueprint: sensor.camera.depth
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 180
+            roll: 0
+        depth_max_m: 200.0
+        every_n_samples: 1
+      - name: depth_right
+        file_prefix: depth_right
+        enabled: true
+        type: depth
+        blueprint: sensor.camera.depth
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 90
+            roll: 0
+        depth_max_m: 200.0
+        every_n_samples: 1
+      - name: semantic_front
+        file_prefix: semantic_front
+        enabled: true
+        type: semantic
+        blueprint: sensor.camera.semantic_segmentation
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 0
+            roll: 0
+        every_n_samples: 1
+      - name: semantic_left
+        file_prefix: semantic_left
+        enabled: true
+        type: semantic
+        blueprint: sensor.camera.semantic_segmentation
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: -90
+            roll: 0
+        every_n_samples: 1
+      - name: semantic_back
+        file_prefix: semantic_back
+        enabled: true
+        type: semantic
+        blueprint: sensor.camera.semantic_segmentation
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 180
+            roll: 0
+        every_n_samples: 1
+      - name: semantic_right
+        file_prefix: semantic_right
+        enabled: true
+        type: semantic
+        blueprint: sensor.camera.semantic_segmentation
+        image_size_x: 1280
+        image_size_y: 720
+        fov: 90
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+            pitch: 0
+            yaw: 90
+            roll: 0
+        every_n_samples: 1
+      - name: rsu_lidar_2d_top
+        file_prefix: lidar_2d_top
+        type: lidar_2d
+        modality: lidar_2d
+        direction: top
+        blueprint: sensor.lidar.ray_cast
+        channels: 1
+        range: 160.0
+        points_per_second: 60000
+        upper_fov: 0
+        lower_fov: 0
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        every_n_samples: 1
+        sync_rotation_frequency_to_sensor_tick: true
+      - name: rsu_lidar_3d_top
+        file_prefix: lidar_3d_top
+        type: lidar_3d
+        modality: lidar_3d
+        direction: top
+        blueprint: sensor.lidar.ray_cast
+        channels: 32
+        range: 160.0
+        points_per_second: 120000
+        upper_fov: 10
+        lower_fov: -25
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        every_n_samples: 1
+        sync_rotation_frequency_to_sensor_tick: true
+      - name: rsu_radar
+        type: radar
+        radar_backend: sionna_rcs
+        radar_profile: deepsense_s9
+        blueprint: sensor.other.radar
+        horizontal_fov: 120.0
+        vertical_fov: 10.0
+        range: 160.0
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        start_frequency_hz: 77000000000.0
+        num_adc_samples: 256
+        num_chirps: 128
+        num_rx: 4
+        rx_spacing_wavelength: 0.5
+        sionna_rcs:
+          deterministic: true
+          seed: 0
+          max_depth: 2
+          buffer_size_per_sp: 100000
+          samples_per_sp: 100000
+          synthetic_array: true
+          los: true
+          specular_reflection: true
+          refraction: false
+          include_background_paths: false
+          background_max_depth: 2
+          background_samples_per_src: 100000
+          object_type: vehicle-multi-sp
+          model_type: 2
+          random_sigma_s: false
+          random_phases: false
+          random_xpr: false
+          target_margin_m: 2.0
+        every_n_samples: 1
+      - name: rsu_gps
+        type: gps
+        blueprint: sensor.other.gnss
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        every_n_samples: 1
+      - name: rsu_imu
+        type: imu
+        blueprint: sensor.other.imu
+        transform:
+          location:
+          - 0.0
+          - 0.0
+          - 1.5
+          rotation:
+          - 0.0
+          - 0.0
+          - 0.0
+        every_n_samples: 1
+  fov:
+    enabled: false
+stage3:
+  communication_python: ../.venv-communication/bin/python
+  radar_python: ../.venv-radar/bin/python
+  blender:
+    enabled: true
+    executable: blender
+    static_scene: ../assets/local/town03/Town03.fbx
+    actor_assets: ../assets/local/actors
+    crop: true
+    crop_margin_m: 100
+  radio:
+    enabled: true
+    frequency_hz: 28000000000
+    bandwidth_hz: 1000000000
+    num_subcarriers: 256
+    arrays:
+    - - 4
+      - 4
+      - 8
+      - 8
+    reconstruction: farfield
+    array_spacing_wavelength: 0.5
+    antenna_pattern: iso
+    polarization: V
+    max_depth: 4
+    samples_per_src: 100000
+    max_num_paths_per_src: 100000
+    array_front_filter: false
+    rx_antenna_height_m: 1.5
+    material_extrapolate: true
+    skip_existing: true
+    radio_map:
+      enabled: false
+  radar:
+    enabled: true
+ris:
+  enabled: false

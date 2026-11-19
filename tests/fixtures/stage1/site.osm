@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6">
+ <bounds minlat="33.0" minlon="-112.0" maxlat="33.001" maxlon="-111.999"/>
+ <node id="1" lat="33.0000" lon="-112.0000"/>
+ <node id="2" lat="33.0000" lon="-111.9999"/>
+ <node id="3" lat="33.0001" lon="-111.9999"/>
+ <node id="4" lat="33.0001" lon="-112.0000"/>
+ <node id="5" lat="33.0002" lon="-112.0000"/>
+ <node id="6" lat="33.0002" lon="-111.9999"/>
+ <node id="7" lat="33.0003" lon="-111.9999"/>
+ <node id="8" lat="33.0003" lon="-112.0000"/>
+ <way id="10"><nd ref="1"/><nd ref="2"/><nd ref="3"/><nd ref="4"/><nd ref="1"/>
+  <tag k="building" v="yes"/><tag k="height" v="12"/></way>
+ <way id="20"><nd ref="5"/><nd ref="6"/><nd ref="7"/><nd ref="8"/><nd ref="5"/>
+  <tag k="building" v="yes"/></way>
+ <way id="30"><nd ref="1"/><nd ref="2"/><nd ref="3"/><nd ref="4"/><nd ref="1"/>
+  <tag k="building" v="no"/></way>
+<way id="50"><nd ref="1"/><nd ref="2"/><tag k="highway" v="residential"/></way></osm>

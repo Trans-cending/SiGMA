@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "external_assets_bundled": false,
+  "target_runtime": "official CARLA 0.9.16 / Unreal Engine 4.26",
+  "required_plugins": [
+    "CarlaTools",
+    "StreetMap",
+    "PythonScriptPlugin",
+    "EditorScriptingUtilities"
+  ],
+  "required_asset_paths": [
+    "/CarlaTools/OnroadMapGenerator/UW_OnRoadMainWidget",
+    "/CarlaTools/OnroadMapGenerator/BP_OpenDriveToMap.BP_OpenDriveToMap_C"
+  ],
+  "native_extensions": [
+    "DigitalTwinHeadlessBridge"
+  ],
+  "generated_asset_root": "/Game/CustomMaps/<map_name>",
+  "semantic_asset_root": "/Game/Carla/Static/<semantic-class>/<map_name>",
+  "source_notice": "The Stage I subproject retains its supplied copyright headers. Publication requires the owner to confirm a distribution license. Official CARLA, Unreal and content use their respective external licenses; geographic records retain upstream attribution."
+}

@@ -1,0 +1,164 @@
+schema_version: 1
+
+# Stage1 Scenario9_3 Radar was generated before UE-only static-material keyword
+# fixes. Its physical material definitions and CARLA semantic mapping are equal.
+compatible_legacy_hashes:
+  - 0196c8518302ded43e68cfcf9d904bab07bc80483ec13ef38121214993097977
+  - 3361cd4029053850778a0dc06d1c4f3442d33a5a70dc42c7949cb6e65503c669
+
+# One RF identity and one set of shared dielectric parameters are used by
+# CARLA/C-Shenron and Sionna RT. Radar-only scattering parameters live beside
+# the shared permittivity and conductivity definitions.
+materials:
+  itu_concrete:
+    sionna_type: concrete
+    rgba: [0.50, 0.50, 0.50, 1.0]
+    frequency_models_ghz: [[1.0, 100.0, 5.24, 0.0, 0.0462, 0.7822]]
+    radar: {roughness_m: 0.004, diffuse_fraction: 0.18, specular_exponent: 180.0}
+  itu_brick:
+    sionna_type: brick
+    rgba: [0.55, 0.20, 0.15, 1.0]
+    frequency_models_ghz: [[1.0, 40.0, 3.91, 0.0, 0.0238, 0.16]]
+    radar: {roughness_m: 0.006, diffuse_fraction: 0.25, specular_exponent: 120.0}
+  itu_plasterboard:
+    sionna_type: plasterboard
+    rgba: [0.85, 0.82, 0.76, 1.0]
+    frequency_models_ghz: [[1.0, 100.0, 2.73, 0.0, 0.0085, 0.9395]]
+    radar: {roughness_m: 0.003, diffuse_fraction: 0.16, specular_exponent: 180.0}
+  itu_wood:
+    sionna_type: wood
+    rgba: [0.55, 0.35, 0.20, 1.0]
+    frequency_models_ghz: [[0.001, 100.0, 1.99, 0.0, 0.0047, 1.0718]]
+    radar: {roughness_m: 0.008, diffuse_fraction: 0.35, specular_exponent: 70.0}
+  itu_glass:
+    sionna_type: glass
+    rgba: [0.75, 0.90, 1.0, 0.35]
+    frequency_models_ghz:
+      - [0.1, 100.0, 6.31, 0.0, 0.0036, 1.3394]
+      - [220.0, 450.0, 5.79, 0.0, 0.0004, 1.658]
+    radar: {roughness_m: 0.0002, diffuse_fraction: 0.03, specular_exponent: 900.0}
+  itu_ceiling_board:
+    sionna_type: ceiling_board
+    rgba: [0.90, 0.90, 0.85, 1.0]
+    frequency_models_ghz:
+      - [1.0, 100.0, 1.48, 0.0, 0.0011, 1.075]
+      - [220.0, 450.0, 1.52, 0.0, 0.0029, 1.029]
+    radar: {roughness_m: 0.003, diffuse_fraction: 0.18, specular_exponent: 160.0}
+  itu_chipboard:
+    sionna_type: chipboard
+    rgba: [0.55, 0.40, 0.25, 1.0]
+    frequency_models_ghz: [[1.0, 100.0, 2.58, 0.0, 0.0217, 0.78]]
+    radar: {roughness_m: 0.007, diffuse_fraction: 0.32, specular_exponent: 80.0}
+  itu_plywood:
+    sionna_type: plywood
+    rgba: [0.60, 0.40, 0.25, 1.0]
+    frequency_models_ghz: [[1.0, 40.0, 2.71, 0.0, 0.33, 0.0]]
+    radar: {roughness_m: 0.006, diffuse_fraction: 0.30, specular_exponent: 90.0}
+  itu_marble:
+    sionna_type: marble
+    rgba: [0.80, 0.80, 0.75, 1.0]
+    frequency_models_ghz: [[1.0, 60.0, 7.074, 0.0, 0.0055, 0.9262]]
+    radar: {roughness_m: 0.001, diffuse_fraction: 0.08, specular_exponent: 500.0}
+  itu_floorboard:
+    sionna_type: floorboard
+    rgba: [0.55, 0.35, 0.20, 1.0]
+    frequency_models_ghz: [[50.0, 100.0, 3.66, 0.0, 0.0044, 1.3515]]
+    radar: {roughness_m: 0.004, diffuse_fraction: 0.22, specular_exponent: 130.0}
+  itu_metal:
+    sionna_type: metal
+    rgba: [0.02, 0.02, 0.02, 1.0]
+    frequency_models_ghz: [[1.0, 100.0, 1.0, 0.0, 10000000.0, 0.0]]
+    radar: {roughness_m: 0.0005, diffuse_fraction: 0.04, specular_exponent: 700.0}
+  itu_very_dry_ground_28:
+    sionna_type: very_dry_ground
+    rgba: [0.45, 0.35, 0.25, 1.0]
+    frequency_models_ghz: [[1.0, 10.0, 3.0, 0.0, 0.00015, 2.52]]
+    radar: {roughness_m: 0.015, diffuse_fraction: 0.45, specular_exponent: 35.0}
+  itu_medium_dry_ground_28:
+    sionna_type: medium_dry_ground
+    rgba: [0.35, 0.30, 0.25, 1.0]
+    frequency_models_ghz: [[1.0, 10.0, 15.0, -0.1, 0.035, 1.63]]
+    radar: {roughness_m: 0.008, diffuse_fraction: 0.30, specular_exponent: 80.0}
+  itu_wet_ground_28:
+    sionna_type: wet_ground
+    rgba: [0.20, 0.20, 0.18, 1.0]
+    frequency_models_ghz: [[1.0, 10.0, 30.0, -0.4, 0.15, 1.30]]
+    radar: {roughness_m: 0.004, diffuse_fraction: 0.18, specular_exponent: 160.0}
+  itu_human:
+    sionna_type: wood
+    rgba: [0.65, 0.52, 0.43, 1.0]
+    frequency_models_ghz: [[0.001, 100.0, 1.99, 0.0, 0.0047, 1.0718]]
+    radar: {roughness_m: 0.004, diffuse_fraction: 0.42, specular_exponent: 45.0}
+  itu_leather:
+    sionna_type: wood
+    rgba: [0.05, 0.03, 0.02, 1.0]
+    frequency_models_ghz: [[0.001, 100.0, 1.99, 0.0, 0.0047, 1.0718]]
+    radar: {roughness_m: 0.005, diffuse_fraction: 0.38, specular_exponent: 55.0}
+  itu_plastic:
+    sionna_type: wood
+    rgba: [0.20, 0.20, 0.20, 1.0]
+    frequency_models_ghz: [[0.001, 100.0, 1.99, 0.0, 0.0047, 1.0718]]
+    radar: {roughness_m: 0.002, diffuse_fraction: 0.20, specular_exponent: 160.0}
+
+
+sionna_aliases:
+  default_bsdf: itu_concrete
+  concrete: itu_concrete
+  brick: itu_brick
+  plasterboard: itu_plasterboard
+  wood: itu_wood
+  glass: itu_glass
+  ceiling_board: itu_ceiling_board
+  chipboard: itu_chipboard
+  plywood: itu_plywood
+  marble: itu_marble
+  floorboard: itu_floorboard
+  metal: itu_metal
+  very_dry_ground: itu_very_dry_ground_28
+  very_dry_ground_28: itu_very_dry_ground_28
+  medium_dry_ground: itu_medium_dry_ground_28
+  medium_dry_ground_28: itu_medium_dry_ground_28
+  wet_ground: itu_wet_ground_28
+  wet_ground_28: itu_wet_ground_28
+  human: itu_human
+  leather: itu_leather
+  plastic: itu_plastic
+
+carla_semantic_tags:
+  1: itu_medium_dry_ground_28
+  2: itu_concrete
+  3: itu_concrete
+  4: itu_concrete
+  5: itu_metal
+  6: itu_metal
+  7: itu_metal
+  8: itu_metal
+  9: itu_wood
+  10: itu_very_dry_ground_28
+  12: itu_human
+  13: itu_human
+  14: itu_metal
+  15: itu_metal
+  16: itu_metal
+  17: itu_metal
+  18: itu_metal
+  19: itu_metal
+  20: itu_concrete
+  21: itu_metal
+  22: itu_plastic
+  23: itu_wet_ground_28
+  24: itu_medium_dry_ground_28
+  25: itu_very_dry_ground_28
+  26: itu_concrete
+  27: itu_metal
+  28: itu_metal
+
+ue_material_rules:
+  - {rf_material_id: itu_glass, keywords: [glass, window, mirror, windshield, windscreen, office01win, block01win, officewin, shelterwin]}
+  - {rf_material_id: itu_brick, keywords: [brick]}
+  - {rf_material_id: itu_wood, keywords: [bp_instanced, instanced, tree, bark, leaf, maple, oak, pine, wood, forest, hedge, cypress, pergola, bench, table]}
+  - {rf_material_id: itu_very_dry_ground_28, keywords: [grass, yard, landscape, terrain, cutted, dirt]}
+  - {rf_material_id: itu_medium_dry_ground_28, keywords: [road, asphalt, drivinglane, lane_mark, lanemark, lane]}
+  - {rf_material_id: itu_concrete, keywords: [sidewalk, curb, building, facade, apartment, roof, wall, floor, "yes", residential, dormitory, university, retail, commercial, garage, parking, institute, shed, sm_no, cube, fountain, worldgridmaterial, fbx_default_material, concrete, structure, block, skyscraper, skycraper, mall, hotel, stairs, plantpot, snackinterioir, tiletexture]}
+  - {rf_material_id: itu_metal, keywords: [streetlight, firehydrant, hydrant, traffic, pole, sign, guardrail, carport, metal, fence, aluminium, lightpost, railtrain, railtrack, airconditioner, variousprops, ironplank, container, billboard, busstop, stops, barrel, trashcan, binbody, binwheels, cybertruck, licenseplate, goal]}
+  - {rf_material_id: itu_plastic, keywords: [lightbox, box, plastic, awning, waterdrum, trashbag, trashbg, slide, advertise, cartel_add, kiosk]}

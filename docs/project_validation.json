@@ -1,0 +1,204 @@
+{
+  "checked_at_utc": "2026-11-19T02:29:26.209146+00:00",
+  "project_directory": "/home/ybianaf/David_PROGRAM/Python/SiGMA",
+  "scope": "Town03/RIS deployment configuration, deterministic routing and bilingual documentation",
+  "regression_tests": {
+    "passed": 124,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "python": "3.10.19",
+    "duration_s": 4.311
+  },
+  "static_compile": {
+    "files": 138,
+    "python": "3.10.19",
+    "status": "passed"
+  },
+  "cli": [
+    {
+      "arguments": [
+        "--help"
+      ],
+      "exit_code": 0
+    },
+    {
+      "arguments": [
+        "validate",
+        "-c",
+        "configs/town03.yaml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "arguments": [
+        "validate",
+        "-c",
+        "configs/ris.yaml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "arguments": [
+        "validate",
+        "-c",
+        "tests/fixtures/stage1/geography.yaml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "arguments": [
+        "doctor",
+        "-c",
+        "tests/fixtures/stage1/geography.yaml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "arguments": [
+        "stage1",
+        "-c",
+        "tests/fixtures/stage1/geography.yaml",
+        "-o",
+        "/tmp/sigma-deployment-geography-75rkcr2u",
+        "--seed",
+        "17"
+      ],
+      "exit_code": 0
+    },
+    {
+      "stage1_output": "/tmp/sigma-deployment-geography-75rkcr2u",
+      "building_count": 3,
+      "road_way_count": 1
+    }
+  ],
+  "configuration_contracts": {
+    "ris": {
+      "schema_errors": [],
+      "nodes": {
+        "cav": {
+          "native_sensors": 0,
+          "virtual_radars": 0
+        },
+        "rsu": {
+          "native_sensors": 0,
+          "virtual_radars": 0
+        },
+        "ris": {
+          "native_sensors": 1,
+          "virtual_radars": 0
+        }
+      },
+      "ris": {
+        "elements": 1024,
+        "fraunhofer_distance_m": 5.116457949866667
+      }
+    },
+    "town03": {
+      "schema_errors": [],
+      "nodes": {
+        "cav": {
+          "native_sensors": 7,
+          "virtual_radars": 1
+        },
+        "rsu": {
+          "native_sensors": 16,
+          "virtual_radars": 1
+        },
+        "ris": {
+          "native_sensors": 0,
+          "virtual_radars": 0
+        }
+      }
+    },
+    "town03_export": {
+      "schema_errors": []
+    },
+    "ris_export": {
+      "schema_errors": []
+    }
+  },
+  "packaging": {
+    "wheel": "sigma_isac-0.1.0-py3-none-any.whl",
+    "sha256": "1bfbcc28c341b867490204106fc630d2103f347d581f5c3197788ca0a4ad3478",
+    "installation_directory": "/tmp/sigma-deployment-final-ro9grxcs",
+    "package_imports_and_resources": "passed",
+    "new_route_helper_import": "passed",
+    "module_cli": "passed",
+    "console_script": "passed",
+    "town03_validation": "passed",
+    "ris_validation": "passed",
+    "license_files": "passed",
+    "source_python_entries_compared": 120
+  },
+  "town03_offline_geometry": {
+    "scope": "official CARLA 0.9.16 offline Town03 OpenDRIVE geometry",
+    "map_sha256": "abf177bcd9b66cfefb7ac4919f6456815f1384f4229f1343c8a6a90bbb7713c9",
+    "spawn_points": 0,
+    "status": "source_geometry_loaded",
+    "spawn_selection": "live map spawn metadata required",
+    "elapsed_s": 0.18482226599007845
+  },
+  "configured_resource_observations": {
+    "configured_carla_endpoint": {
+      "host": "127.0.0.1",
+      "port": 2000,
+      "tcp_connect_result": 111
+    },
+    "configured_resources": {
+      ".venv/bin/python": false,
+      ".venv-communication/bin/python": false,
+      ".venv-radar/bin/python": false,
+      "assets/local/town03/Town03.fbx": false,
+      "assets/local/ris/site.osm": false,
+      "assets/local/ris/buildings.geojson": false,
+      "assets/local/ris/land_cover.geojson": false,
+      "assets/local/ris/SigmaRIS.fbx": false,
+      "assets/local/actors": false,
+      "assets/local/CARLA_0.9.16_source": false,
+      "assets/local/UnrealEngine_4.26/Engine/Binaries/Linux/UE4Editor": false
+    }
+  },
+  "source_integrity": {
+    "snapshot_files": 781,
+    "changed_files": [],
+    "configuration_source_files": 9,
+    "observed_dataset_metadata_files": 2
+  },
+  "documentation": {
+    "readmes": [
+      "README.md",
+      "README_CN.md"
+    ],
+    "shared_code_blocks": 12,
+    "local_links": "passed",
+    "direct_prose_scan": "passed"
+  },
+  "runtime_acceptance": [
+    {
+      "check": "Town03 live map spawn selection and synchronized sensors",
+      "status": "pending",
+      "requirements": "Running official CARLA 0.9.16 server with the Town03 map"
+    },
+    {
+      "check": "RIS geographic build, Cook/Import and camera acquisition",
+      "status": "pending",
+      "requirements": "Regional OSM/Overture inputs and configured official CARLA/UE build resources"
+    },
+    {
+      "check": "Same-site Blender, communication, Radar and full 1024-element RIS ray tracing",
+      "status": "pending",
+      "requirements": "Matching static/actor meshes, captured states and configured backend interpreters"
+    }
+  ],
+  "final_audit": {
+    "obsolete_configuration_or_dataset_mode_references": [],
+    "defensive_prose_matches": [],
+    "broken_local_links": [],
+    "readme_shared_code_blocks": 12,
+    "coverage_directives_preserved": 1,
+    "provenance_target_checksums": "passed",
+    "build_and_test_caches": "cleaned",
+    "final_radar_docstring_executable_ast": "identical"
+  }
+}

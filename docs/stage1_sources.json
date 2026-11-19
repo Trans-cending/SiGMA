@@ -1,0 +1,194 @@
+{
+  "source_policy": "Source project audit with provenance paths and file checksums.",
+  "files": [
+    {
+      "source": "mosaic_digital_twin_release_v101/bridge/Private/DigitalTwinHeadlessBridge.cpp",
+      "source_sha256": "71e155a11a8c57c1e6638bc9f6056b49f6d284d7d828a82b898b07a2d0e30a71",
+      "target": "sigma/map_construction/bridge/Private/DigitalTwinHeadlessBridge.cpp",
+      "target_sha256": "71e155a11a8c57c1e6638bc9f6056b49f6d284d7d828a82b898b07a2d0e30a71",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/bridge/Public/DigitalTwinHeadlessBridge.h",
+      "source_sha256": "b7aa575cc3035ace061756ce0bb91e2ea024e6a1336669ac5a3736d2bdcb10a4",
+      "target": "sigma/map_construction/bridge/Public/DigitalTwinHeadlessBridge.h",
+      "target_sha256": "db290a2bd81e293c6efa25afed2d8995473bde46163badc66e60ae48ded6d6d3",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/mosaic_release/http_range.py",
+      "source_sha256": "5ff14ea7665e76a1b37bb4194c85f5df5f12994827ac26c8fac1017e12c450d8",
+      "target": "sigma/map_construction/http_range.py",
+      "target_sha256": "5ff14ea7665e76a1b37bb4194c85f5df5f12994827ac26c8fac1017e12c450d8",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/install_bridge.py",
+      "source_sha256": "8dd20001e24a0a688bf81fa503cb8376986c7897aad261678d0d6d4401cd2cad",
+      "target": "sigma/map_construction/install_bridge.py",
+      "target_sha256": "0033c379fa2015eb879414f8479fb176afcda6e8127181a328e2cd32416f38f2",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/aggregate_generation_audits.py",
+      "source_sha256": "e6222ad1f937090715397f1e76b84b632194fe9a5745aef73bc1821b577efc98",
+      "target": "sigma/map_construction/tools/aggregate_generation_audits.py",
+      "target_sha256": "e6222ad1f937090715397f1e76b84b632194fe9a5745aef73bc1821b577efc98",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/aggregate_semantic_reports.py",
+      "source_sha256": "ed2ccdca61a41012c019a9983300c2c09a9b408348beda96632ea9285c5ca336",
+      "target": "sigma/map_construction/tools/aggregate_semantic_reports.py",
+      "target_sha256": "ed2ccdca61a41012c019a9983300c2c09a9b408348beda96632ea9285c5ca336",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/audit_carla_map_alignment.py",
+      "source_sha256": "4c6207fb779e5fad8493f2a1ec4f01e3b38f5082f8eab9dd77f3094c8403cd93",
+      "target": "sigma/map_construction/tools/audit_carla_map_alignment.py",
+      "target_sha256": "4c6207fb779e5fad8493f2a1ec4f01e3b38f5082f8eab9dd77f3094c8403cd93",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/building_footprint_enrichment.py",
+      "source_sha256": "a66836028714963086c69afcb04769a5a6dc707c6f0d04f46357b66c0e3112f6",
+      "target": "sigma/map_construction/tools/building_footprint_enrichment.py",
+      "target_sha256": "1b51668ab43cea6c3c4cd843f207b2af55d5d07443ca19370c2a9b107da32ee9",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/enrich_osm_building_heights.py",
+      "source_sha256": "3730cab085b72d6b736c7ad34f5c4cf61a2d3ed367fe18ba3df52505a54453f2",
+      "target": "sigma/map_construction/tools/enrich_osm_building_heights.py",
+      "target_sha256": "774bbe6a511e268e65d315a7a47a50037c198ce0f8bbe5f4dd3e58415fe5bdda",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/fetch_and_sanitize_osm.py",
+      "source_sha256": "88fdb5f40eeb7c8217b8c541c8376684026bb4ab6913561ea571e59b0132cb26",
+      "target": "sigma/map_construction/tools/fetch_and_sanitize_osm.py",
+      "target_sha256": "938769f79894ac57491838a668a27ee832a6bf48518f3cf314d5ff497da596de",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/normalize_osm_generation_features.py",
+      "source_sha256": "43b7ac46c67a7044d98e259353218e34b9c51adac95e77a7cb9305adfd34e96a",
+      "target": "sigma/map_construction/tools/normalize_osm_generation_features.py",
+      "target_sha256": "43b7ac46c67a7044d98e259353218e34b9c51adac95e77a7cb9305adfd34e96a",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/prepare_opendrive.py",
+      "source_sha256": "3815fcf60622236850838af38192fb8a673b529f3a65b0fccac01ac6ff9020ed",
+      "target": "sigma/map_construction/tools/prepare_opendrive.py",
+      "target_sha256": "3815fcf60622236850838af38192fb8a673b529f3a65b0fccac01ac6ff9020ed",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/prepare_running_tracks.py",
+      "source_sha256": "d1c91c4c16451e64cda7679dd86193360fd71b783727e57bfa10f208806d8600",
+      "target": "sigma/map_construction/tools/prepare_running_tracks.py",
+      "target_sha256": "587f2907f305f4ed34dc08b33f72d68b22163e56b2a73c87464068680d9910db",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/prepare_sidewalks.py",
+      "source_sha256": "3418735fc8b302276a42435c67b2af3816f217c72211264b5e2a1e929bc33fdf",
+      "target": "sigma/map_construction/tools/prepare_sidewalks.py",
+      "target_sha256": "d8c8ec9d5b9a31795fdb32d0e07f4f239124909cb75f807cfe1baf251b71828c",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/prepare_streetlights.py",
+      "source_sha256": "f9d2538c5120392dae0293f690a9e9a572a899c2762f99871d1e3121c9270555",
+      "target": "sigma/map_construction/tools/prepare_streetlights.py",
+      "target_sha256": "4a35c840fd4f6228bb17e86a0d90423642297e894b3f8e95b8316f25f03dffa3",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/prepare_traffic_signals.py",
+      "source_sha256": "9ea8a74858e0e52544b99636c382949aba4ad472f30ad3d58bf9cf8616cfcb17",
+      "target": "sigma/map_construction/tools/prepare_traffic_signals.py",
+      "target_sha256": "3086457920a515c059fa2aec585d4a1bbd17eacca6bd188a80907c87ac6c32e6",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/render_final_generation_topview.py",
+      "source_sha256": "072c7a965b92d9dc3f9218319cd4dbe61797533790e98a9b7c5446cb2d2826b1",
+      "target": "sigma/map_construction/tools/render_final_generation_topview.py",
+      "target_sha256": "dd4ae94d2be1f86d3c8da190c31c1dbdf7a9ea6d49e2a276479ed27cbd1921e6",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/repair_generated_opendrive.py",
+      "source_sha256": "462befad67277f5adffc966227a94dbac11ba204a9d2da9ce4eae4c7a9c42c79",
+      "target": "sigma/map_construction/tools/repair_generated_opendrive.py",
+      "target_sha256": "60787aafc0df6c15505cf7d2759467f9638fcbd1d9940a736422a55694d3c47f",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/summarize_vegetation_visibility.py",
+      "source_sha256": "4df939f99dd14a2e6bc264d0fb406aea62ef8a3aeec58abb242dbd7c355dad95",
+      "target": "sigma/map_construction/tools/summarize_vegetation_visibility.py",
+      "target_sha256": "4df939f99dd14a2e6bc264d0fb406aea62ef8a3aeec58abb242dbd7c355dad95",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/tools/supervise_ue4_report_pass.py",
+      "source_sha256": "1c6b9af29cfaf6d28189f55253544af91c11e60c093518ce9452f64b884ddcf9",
+      "target": "sigma/map_construction/tools/supervise_ue4_report_pass.py",
+      "target_sha256": "0e7ab28eed782e571fff1e8ff63df87dd8c5a70b944e34e381df2063c5ac85a4",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/ue/audit_generated_level.py",
+      "source_sha256": "de159277f8870771ec4c243683e9b22b111312e6013222810756e31e343464e4",
+      "target": "sigma/map_construction/ue/audit_generated_level.py",
+      "target_sha256": "1e16fbb292eed1b4f86a4cdb7031377196314cb4610e6413fd9f4dea374d8c0f",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/ue/generate_save_map.py",
+      "source_sha256": "9c15c0d091d06d7a14f3257ee3d5cef7cb11daf9f15b83a8ed5ca23c4d149a3c",
+      "target": "sigma/map_construction/ue/generate_save_map.py",
+      "target_sha256": "703957f206bcf75af7fdf6d9aef8071f966547f9efba39235af61718dd08a0bc",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/ue/inject_running_tracks.py",
+      "source_sha256": "d7251e42167c76d42c37914bfe7e2b05b3281bf102ffa6471334b16119074341",
+      "target": "sigma/map_construction/ue/inject_running_tracks.py",
+      "target_sha256": "d7251e42167c76d42c37914bfe7e2b05b3281bf102ffa6471334b16119074341",
+      "status": "copied"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/ue/level_content_classification.py",
+      "source_sha256": "31e8a1e440962c7b2fe2366fa33b6eea38fd9947d75cc45e15832d5d15654899",
+      "target": "sigma/map_construction/ue/level_content_classification.py",
+      "target_sha256": "ddb3410f2499ebc281864301e6990d1ad29f52eee1dc7196ad1f5cf4fc55abf4",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/ue/prune_generated_level.py",
+      "source_sha256": "ce6e9c9ba51b5f964c8349960d9c39d69f5447daf85dd77101e6982d6c9c937c",
+      "target": "sigma/map_construction/ue/prune_generated_level.py",
+      "target_sha256": "9384b09164b2c7d803abab8030a873a20c4f18b7c0250f7e90e2d81d8b0b874e",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/ue/semantic_retag_level.py",
+      "source_sha256": "413544e52196fcf361fb5ee49ebe742bcc73d65727f157e0c9b4f9fbc826c101",
+      "target": "sigma/map_construction/ue/semantic_retag_level.py",
+      "target_sha256": "5aeba65c836f81c9a35c2624c50f8da1217f32460892815d2a9f5a480a4a2418",
+      "status": "adapted"
+    },
+    {
+      "source": "mosaic_digital_twin_release_v101/ue/semantic_retag_map.py",
+      "source_sha256": "533539d97061f16fd061a9f02899e844cda78da26ad39b7e0247fe2fbcd62586",
+      "target": "sigma/map_construction/ue/semantic_retag_map.py",
+      "target_sha256": "533539d97061f16fd061a9f02899e844cda78da26ad39b7e0247fe2fbcd62586",
+      "status": "copied"
+    }
+  ]
+}

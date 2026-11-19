@@ -1,0 +1,27 @@
+{
+  "host": "gpu32",
+  "job_id": "2312701",
+  "partition": "gpu-rtx4090d",
+  "cuda_visible_devices": "0",
+  "nvidia_smi": [
+    "0, NVIDIA GeForce RTX 4090 D, 570.211.01, 23028 MiB"
+  ],
+  "status": "passed",
+  "variant": "cuda_ad_mono_polarized",
+  "cir_shape": [
+    1,
+    2,
+    1,
+    4,
+    1,
+    1
+  ],
+  "csi_shape": [
+    1,
+    2,
+    4,
+    3
+  ],
+  "max_abs_csi": 8.520256960764527e-05,
+  "elapsed_s": 0.6376768220216036
+}

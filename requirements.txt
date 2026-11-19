@@ -1,0 +1,3 @@
+# Base CLI. Install optional groups from pyproject.toml into separate runtimes.
+numpy>=1.26,<3
+PyYAML>=6,<7

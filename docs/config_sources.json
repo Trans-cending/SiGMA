@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "path": "mosaic_platform_v101/CARLA_sensor_storage/config_traj_backup/config_trajectory_Town03.yaml",
+      "sha256": "eef152f1fb860f08550ae2fa996edd0df2d56793049d2b27e00e676e574fc553"
+    },
+    {
+      "path": "mosaic_agent/experiments/ris_camera_phase_optimization.json",
+      "sha256": "68b739365cf105d71c916dafef76b805ecc1e984ca032e390c376f6a912802aa"
+    },
+    {
+      "path": "mosaic_digital_twin_release_v101/runs/Mosaic_D2D_Scenario_wdtlights/pipeline_config.json",
+      "sha256": "046ab983a4c81d8a576c9be8cb09660837be111996641b1bd7c3d8fd0bf7af90"
+    },
+    {
+      "path": "mosaic_platform_v101/examples/ris_sionna_rcs_overlay.yaml",
+      "sha256": "fe5bca9e368999d0a56059244c9d73cff65fa17d8f9732c77f2ff936eb603860"
+    },
+    {
+      "path": "mosaic_platform_v101/Sionna_channel_storage/sionna_config.py",
+      "sha256": "b497b0ea0335097f75d2592c0a862d93f271aaf222fe702d1dd23ec7e3da5dab"
+    },
+    {
+      "path": "mosaic_platform_v101/CARLA_sensor_storage/traffic_actor_manager.py",
+      "sha256": "4416ef6fc386ade9a51ff0007fc492a36a4546c0f12171a8d6f773fec6c9e96f"
+    },
+    {
+      "path": "mosaic_platform_v101/CARLA_sensor_storage/generator_cli.py",
+      "sha256": "0bb1744da7059284509f4b8b29f1b6132f9c13d5e18feb215a8941e69a957bcf"
+    },
+    {
+      "path": "mosaic_platform_v101/CARLA_sensor_storage/carla_session.py",
+      "sha256": "42c28d960f0b86b0aba3420a0a9541940d2c33f9e01ecba4802bf1cf38d381ba"
+    },
+    {
+      "path": "mosaic_platform_v101/CARLA_sensor_storage/data_utils/multimodal_schema.py",
+      "sha256": "33c6176b241a69528346fdb9927cab40a31f49b09194094a71498241daa3f328"
+    }
+  ],
+  "deployments": {
+    "town03": {
+      "configuration": "configs/town03.yaml",
+      "map": "Town03",
+      "simulation_hz": 10,
+      "capture_seconds": 4,
+      "seed": 42,
+      "selected_vehicles_per_run": 1,
+      "background_vehicles": 29,
+      "rsu_source_index": 0,
+      "route_selection": "seeded_spawn_points",
+      "radio_source": "mosaic_platform_v101/Sionna_channel_storage/sionna_config.py",
+      "sensor_rotation_convention": "pitch,yaw,roll; named side cameras use canonical yaw directions",
+      "radar_source": "mosaic_platform_v101/examples/ris_sionna_rcs_overlay.yaml"
+    },
+    "ris": {
+      "configuration": "configs/ris.yaml",
+      "rebuilt_map": "SigmaRIS",
+      "source_map": "Mosaic_D2D_Scenario_wdtlights",
+      "source_bbox_wsen": [
+        -111.93148399477475,
+        33.413716777425044,
+        -111.92072156082524,
+        33.42269988917496
+      ],
+      "source_center_lat_lon": [
+        33.4182083333,
+        -111.9261027778
+      ],
+      "source_radius_m": 500.0,
+      "default_route": "southbound",
+      "routes": [
+        {
+          "name": "southbound",
+          "start": {
+            "latitude": 33.418616405888145,
+            "longitude": -111.92623489482054
+          },
+          "end": {
+            "latitude": 33.416952154879134,
+            "longitude": -111.92624334349155
+          }
+        },
+        {
+          "name": "northbound",
+          "start": {
+            "latitude": 33.41700857068986,
+            "longitude": -111.92638697089876
+          },
+          "end": {
+            "latitude": 33.418799753624995,
+            "longitude": -111.92639541956976
+          }
+        }
+      ],
+      "capture_seconds": 15,
+      "simulation_hz": 10,
+      "seed": 1477,
+      "speed_kmh": 30,
+      "source_speed_range_kmh": [
+        25,
+        35
+      ],
+      "ris_elements": 1024
+    }
+  },
+  "observed_dataset_metadata": [
+    {
+      "path": "Magic_D2D_RIS_camera_phase_optimization_bs_forward20m/stage1_multimodal/sensor_config.yaml",
+      "sha256": "0059586f981d5e1f25cd21c6f7f596adea27caf395b63a020ef5e33e86b1edba",
+      "simulation_hz": 10,
+      "capture_seconds": 15,
+      "total_vehicles": 25
+    },
+    {
+      "path": "Magic_D2D_RIS_camera_phase_optimization_bs_forward20m/stage1_multimodal/000001/trajectory_meta.yaml",
+      "sha256": "98f9528814137797ceecb820ee2ec4501800496a18baccb150db227b45e9f87f",
+      "seed": 1477,
+      "samples": 54,
+      "termination": "camera FoV exit"
+    }
+  ],
+  "target_configurations": {
+    "configs/rf_materials.yaml": "ca0af792f3c406428f398545190dfc0d56d770df8563a1fd8e072e65d5d42589",
+    "configs/ris.yaml": "35a65db2b10311e2f34250441fa701371a15474a3c20adb0c21b4bb5ac47085d",
+    "configs/ris_export.yaml": "53128856eed4227902bfa5b5d59f1a4ad9f56ebc6fdfcb89f3223f4d317cad1b",
+    "configs/town03.yaml": "dd4660f25d22127926ccd5b969be8cfbaaab0cc60598642ce2eb3141db3c53db",
+    "configs/town03_export.yaml": "df31753ac3fd78d2ab13489571633b55e5e1f1179fbde82b6591aead1956dd08"
+  }
+}

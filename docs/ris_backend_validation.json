@@ -1,0 +1,89 @@
+{
+  "backend": "sionna-rt==2.0.1",
+  "device": "CPU",
+  "variant": "llvm_ad_mono_polarized",
+  "fixture": "Empty static/dynamic XML, RSU [0,0,3], UE [10,0,3], RIS [5,2,3] in CARLA coordinates; 2x3 panel, yaw=-90 degrees",
+  "results": [
+    {
+      "mode": "farfield",
+      "status": "passed",
+      "component_shape": [
+        3,
+        6,
+        4
+      ],
+      "user_component_shape": [
+        3,
+        2,
+        6
+      ],
+      "direct_shape": [
+        3,
+        2,
+        4
+      ],
+      "explicit_component_paths": [],
+      "rephase": "passed",
+      "shared_state_identity": "passed",
+      "max_abs_channel_coefficients": {
+        "h_direct": 8.52025841595605e-05,
+        "h_br": 0.00015821722627151757,
+        "h_ru": 0.00015821722627151757,
+        "h_cascade": 4.1671288641964566e-08,
+        "h_effective": 8.524410077370703e-05
+      },
+      "projected_aperture_field_factor": 0.3713906763541037,
+      "dataset_audit": {
+        "ok": true,
+        "world_states": 1,
+        "radio_products": 5,
+        "errors": []
+      }
+    },
+    {
+      "mode": "nearfield",
+      "status": "passed",
+      "component_shape": [
+        3,
+        6,
+        4
+      ],
+      "user_component_shape": [
+        3,
+        2,
+        6
+      ],
+      "direct_shape": [
+        3,
+        2,
+        4
+      ],
+      "explicit_component_paths": [
+        "ris_to_cav",
+        "rsu_to_ris"
+      ],
+      "rephase": "passed",
+      "shared_state_identity": "passed",
+      "max_abs_channel_coefficients": {
+        "h_direct": 8.522537245880812e-05,
+        "h_br": 0.00015843656728975475,
+        "h_ru": 0.00015839262050576508,
+        "h_cascade": 4.4653976516428884e-08,
+        "h_effective": 8.526786405127496e-05
+      },
+      "projected_aperture_field_factor": 0.3713906763541037,
+      "dataset_audit": {
+        "ok": true,
+        "world_states": 1,
+        "radio_products": 8,
+        "errors": []
+      }
+    }
+  ],
+  "limitations": [
+    "Coverage: Sionna component generation and rephasing using constructed empty-scene XML and state fixtures",
+    "Six RIS elements; 1024-element dimensions tested separately by numeric unit tests",
+    "Fixture lies in the panel far field; nearfield mode verifies physical explicit-array computation in this geometry",
+    "Live geographic acquisition and full-site RIS validation remain separate integration tasks"
+  ]
+}
